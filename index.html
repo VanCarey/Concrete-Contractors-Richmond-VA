@@ -4,89 +4,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Concretes Richmond VA | Top-Rated Concrete Contractors</title>
+  <!-- Font Awesome for icons -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-pQV6jOj6pUj9b5ZV0Y1K0YhP2lfF5I4Cm/+5HlaaI3E2j/3o3MG7KXh+vwz2EoP5QtV8cyN0vKjUQTgXUnE2rQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
   <style>
     /* Reset & Base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #333; background: #fafafa; }
     a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
     img { max-width: 100%; display: block; }
 
-    /* Container */
+    /* Utility */
     .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    .section { padding: 4rem 0; }
 
     /* Header */
-    header { background: #222; color: #fff; padding: 1rem 0; }
-    header .container { display: flex; align-items: center; justify-content: space-between; }
-    header nav a { margin-left: 1rem; color: #fff; font-weight: bold; }
-    header .logo { font-size: 1.5rem; font-weight: bold; }
+    header { background: #1a1a1a; }
+    header .container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .logo img { height: 50px; }
+    nav a { margin-left: 1.5rem; color: #fff; font-weight: 500; transition: color .3s; }
+    nav a:hover { color: #ffcc00; }
 
     /* Hero */
-    .hero { background: url('https://via.placeholder.com/1600x600') center/cover no-repeat; color: #fff; text-align: center; padding: 4rem 1rem; position: relative; }
+    .hero { 
+      background: url('https://www.concretesrichmondva.com/wp-content/uploads/2024/11/Resized-Images-2-03.jpg') center/cover no-repeat; 
+      color: #fff; text-align: center; padding: 5rem 1rem; position: relative; 
+    }
     .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
     .hero .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.1rem; margin-bottom: 2rem; }
-    .btn { display: inline-block; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
-    .btn-primary { background: #007bff; color: #fff; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .btn { 
+      display: inline-block; padding: .75rem 1.5rem; border: none; border-radius: 4px; 
+      font-weight: 600; cursor: pointer; transition: background .3s, transform .2s; 
+    }
+    .btn-primary { background: #007bff; color: #fff; margin-right: .5rem; }
+    .btn-primary:hover { background: #0056b3; transform: translateY(-2px); }
     .btn-secondary { background: #28a745; color: #fff; }
+    .btn-secondary:hover { background: #1e7e34; transform: translateY(-2px); }
 
     /* About */
-    .about { padding: 4rem 0; }
-    .about h2 { text-align: center; margin-bottom: 1rem; }
-    .about .cards { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
-    .about .card { flex: 1; min-width: 250px; background: #f8f9fa; padding: 1rem; border-radius: 4px; text-align: center; }
-    .about .card h3 { margin-bottom: 0.5rem; color: #007bff; }
-    .about .card p { font-size: 0.9rem; }
+    #about h2 { text-align: center; margin-bottom: 1rem; color: #1a1a1a; }
+    #about p { max-width: 800px; margin: 0 auto 2rem auto; text-align: center; }
+    .cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .card { flex: 1; min-width: 220px; background: #fff; padding: 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; }
+    .card h3 { margin-bottom: .5rem; color: #007bff; }
+    .card p { font-size: .9rem; }
 
     /* Process */
-    .process { background: #f1f1f1; padding: 4rem 0; }
-    .process h2 { text-align: center; margin-bottom: 2rem; }
-    .process .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
-    .process .step { background: #fff; padding: 1.5rem; border-radius: 4px; text-align: center; }
-    .process .step h3 { margin-bottom: 0.5rem; color: #28a745; }
+    .process { background: #f7f7f7; }
+    .process h2 { text-align: center; margin-bottom: 2rem; color: #1a1a1a; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; }
+    .step { background: #fff; padding: 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; }
+    .step h3 { margin-bottom: .75rem; color: #28a745; }
 
     /* Services */
-    .services { padding: 4rem 0; }
-    .services h2 { text-align: center; margin-bottom: 2rem; }
-    .services .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
-    .services .service { background: #fff; padding: 1rem; border-radius: 4px; border: 1px solid #ddd; text-align: center; }
-    .services .service h3 { margin-bottom: 0.5rem; color: #222; }
-    .services .service p { font-size: 0.9rem; margin-bottom: 1rem; }
-    .services .service a { font-size: 0.85rem; color: #007bff; }
+    #services h2 { text-align: center; margin-bottom: 2rem; color: #1a1a1a; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; }
+    .service { position: relative; background: #fff; padding: 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; transition: transform .3s, box-shadow .3s; }
+    .service:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .service i { font-size: 2rem; color: #007bff; margin-bottom: .75rem; }
+    .service h3 { margin-bottom: .5rem; color: #222; }
+    .service p { font-size: .9rem; margin-bottom: 1rem; }
+    .service a { font-size: .85rem; color: #007bff; font-weight: 500; }
 
     /* Gallery */
-    .gallery { padding: 4rem 0; background: #f1f1f1; }
-    .gallery h2 { text-align: center; margin-bottom: 2rem; }
-    .gallery .images { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
+    .gallery { background: #f7f7f7; }
+    .gallery h2 { text-align: center; margin-bottom: 2rem; color: #1a1a1a; }
+    .images { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
+    .images img { border-radius: 6px; }
 
     /* Testimonials */
-    .testimonials { padding: 4rem 0; }
-    .testimonials h2 { text-align: center; margin-bottom: 2rem; }
-    .testimonials .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1rem; }
-    .testimonials .testimonial { background: #f8f9fa; padding: 1rem; border-radius: 4px; }
-    .testimonials .testimonial p { font-style: italic; margin-bottom: 0.5rem; }
-    .testimonials .testimonial h4 { font-weight: bold; color: #007bff; }
+    .testimonials h2 { text-align: center; margin-bottom: 2rem; color: #1a1a1a; }
+    .testimonial { background: #fff; padding: 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .testimonial p { font-style: italic; margin-bottom: .75rem; }
+    .testimonial h4 { font-weight: bold; color: #007bff; }
 
     /* CTA */
     .cta { background: #007bff; color: #fff; text-align: center; padding: 3rem 1rem; }
     .cta p { font-size: 1.1rem; margin-bottom: 1rem; }
 
     /* Contact */
-    .contact { padding: 4rem 0; }
-    .contact h2 { text-align: center; margin-bottom: 2rem; }
-    .contact .form-container { display: flex; flex-wrap: wrap; gap: 2rem; }
-    .contact .contact-info, .contact form { flex: 1; min-width: 280px; }
-    .contact-info p, .contact-info li { margin-bottom: 0.5rem; }
-    .contact form input, .contact form textarea, .contact form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
-    .contact form button { width: 100%; padding: 0.75rem; background: #28a745; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    #contact h2 { text-align: center; margin-bottom: 2rem; color: #1a1a1a; }
+    .form-container { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .contact-info, form { flex: 1; min-width: 280px; background: #fff; padding: 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .contact-info p, .contact-info li { margin-bottom: .75rem; }
+    form input, form textarea, form select { width: 100%; padding: .75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    form button { width: 100%; padding: .75rem; background: #28a745; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background .3s; }
+    form button:hover { background: #1e7e34; }
 
     /* Footer */
-    footer { background: #222; color: #ccc; padding: 2rem 0; }
-    footer .footer-container { display: flex; flex-wrap: wrap; gap: 2rem; }
-    footer .footer-col { flex: 1; min-width: 200px; }
-    footer a { color: #ccc; }
-    footer p { font-size: 0.9rem; }
-    @media(max-width:600px){ .hero h1{font-size:2rem;} }
+    footer { background: #1a1a1a; color: #bbb; padding: 2rem 0; }
+    .footer-container { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-col h4 { color: #fff; margin-bottom: .75rem; }
+    .footer-col ul li { margin-bottom: .5rem; }
+    .footer-col a { color: #bbb; transition: color .3s; }
+    .footer-col a:hover { color: #fff; }
+    footer p { text-align: center; margin-top: 1rem; font-size: .9rem; color: #555; }
+
+    @media(max-width:600px){
+      .hero h1 { font-size: 2rem; }
+      header .container { flex-direction: column; }
+      nav a { margin: .5rem 0; }
+    }
   </style>
 </head>
 <body>
@@ -94,7 +121,9 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <div class="logo">Concretes Richmond VA</div>
+      <div class="logo">
+        <a href="/"><img src="https://www.concretesrichmondva.com/wp-content/uploads/2024/11/cropped-Logo-02-300x105.png" alt="Concretes Richmond VA Logo"></a>
+      </div>
       <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -108,16 +137,16 @@
   <section class="hero">
     <div class="hero-content container">
       <h1>Top-Rated Concrete Contractors in Richmond, VA</h1>
-      <p>For over 20 years, Concretes Richmond VA has been the trusted choice for premium concrete work—residential and commercial.</p>
+      <p>For over 20 years, Concretes Richmond VA has delivered durable, beautiful concrete solutions for homes and businesses.</p>
       <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
       <a href="#gallery" class="btn btn-secondary">View Our Portfolio</a>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="about container">
+  <section id="about" class="about container section">
     <h2>About Us</h2>
-    <p>We’re a locally owned, family-operated concrete company serving Richmond and the surrounding communities. We combine old-school craftsmanship with cutting-edge techniques to deliver durable, beautiful concrete that lasts.</p>
+    <p>We’re a locally owned, family-operated concrete company serving Richmond and surrounding areas. Combining decades of hands‑on experience with modern techniques, we deliver concrete that stands up to our climate and your expectations.</p>
     <div class="cards">
       <div class="card">
         <h3>20+ Years Experience</h3>
@@ -125,119 +154,130 @@
       </div>
       <div class="card">
         <h3>Quality Guarantee</h3>
-        <p>We stand behind our work 100%.</p>
+        <p>We back every project with a 100% satisfaction promise.</p>
       </div>
       <div class="card">
         <h3>Local & Family-Owned</h3>
-        <p>Proudly serving Richmond, VA.</p>
+        <p>Proudly serving Richmond, VA and nearby communities.</p>
       </div>
     </div>
   </section>
 
   <!-- Process -->
-  <section class="process container">
+  <section class="process container section">
     <h2>Our Concrete Process</h2>
     <div class="steps">
-      <div class="step"><h3>1. Consultation</h3><p>We discuss your needs and site conditions.</p></div>
-      <div class="step"><h3>2. Estimate</h3><p>Receive a transparent, written quote.</p></div>
-      <div class="step"><h3>3. Preparation</h3><p>Site prep, form setting, and base compaction.</p></div>
-      <div class="step"><h3>4. Installation</h3><p>Pouring, finishing, and curing.</p></div>
+      <div class="step"><i class="fas fa-comments"></i><h3>Consultation</h3><p>We discuss your vision, budget, and site needs.</p></div>
+      <div class="step"><i class="fas fa-file-alt"></i><h3>Estimate</h3><p>Receive a transparent, written quote with options.</p></div>
+      <div class="step"><i class="fas fa-shovel"></i><h3>Preparation</h3><p>Site clearing, grading, and base compaction for durability.</p></div>
+      <div class="step"><i class="fas fa-cubes"></i><h3>Installation</h3><p>Precision pouring, finishing, and curing for a perfect result.</p></div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="services container">
+  <section id="services" class="services container section">
     <h2>Our Services</h2>
     <div class="grid">
       <div class="service">
-        <h3>Residential Concrete</h3>
-        <p>Driveways, patios, foundations, and more for homeowners.</p>
+        <i class="fas fa-home"></i>
+        <h3>Residential Concrete Services</h3>
+        <p>Driveways, patios, foundations, walkways, and more for homeowners.</p>
         <a href="/residential-concrete-services/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-layer-group"></i>
         <h3>Stamped Concrete</h3>
-        <p>Custom textures like brick, stone, and slate.</p>
+        <p>Custom textures—brick, stone, slate—for high-end looks.</p>
         <a href="/stamped-concrete-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
-        <h3>Stamped Patios</h3>
-        <p>Decorative outdoor living spaces that impress.</p>
+        <i class="fas fa-tree"></i>
+        <h3>Stamped Concrete Patios</h3>
+        <p>Entertaining‑ready patios with low maintenance and style.</p>
         <a href="/stamped-concrete-patio-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-dumpster"></i>
         <h3>Retaining Walls</h3>
-        <p>Stabilize soil and add dimension to your landscape.</p>
+        <p>Structural soil retention with a clean, finished look.</p>
         <a href="/retaining-walls-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-tools"></i>
         <h3>Patio Repair</h3>
-        <p>Fix cracks, chips, and uneven surfaces quickly.</p>
+        <p>Fix cracks, chips, and uneven surfaces efficiently.</p>
         <a href="/patio-repair-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-house-damage"></i>
         <h3>Foundation Repair</h3>
-        <p>Address settling, cracks, and water intrusion.</p>
+        <p>Address settling, cracks, and water intrusion promptly.</p>
         <a href="/foundation-repair-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-walking"></i>
         <h3>Concrete Walkways</h3>
-        <p>Safe, attractive paths for homes and businesses.</p>
+        <p>Safe, attractive paths that guide guests and boost curb appeal.</p>
         <a href="/concrete-walkways-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-chair"></i>
         <h3>Concrete Patios</h3>
-        <p>Weather‑resistant, stylish outdoor gathering areas.</p>
+        <p>Durable, weather‑resistant gathering spaces for your home.</p>
         <a href="/concrete-patio-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
-        <h3>Patio Pavers</h3>
-        <p>Stone‑look pavers with concrete’s strength.</p>
+        <i class="fas fa-th-large"></i>
+        <h3>Concrete Patio Pavers</h3>
+        <p>Stone-look pavers with concrete’s strength and longevity.</p>
         <a href="/concrete-patio-pavers-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-building"></i>
         <h3>Concrete Foundations</h3>
-        <p>Strong, code‑compliant bases for new builds.</p>
+        <p>Strong, code-compliant bases for new construction and additions.</p>
         <a href="/concrete-foundations-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
-        <h3>Driveways</h3>
-        <p>Durable, level driveways built to last.</p>
+        <i class="fas fa-road"></i>
+        <h3>Concrete Driveways</h3>
+        <p>Clean, level driveways built to handle daily traffic and time.</p>
         <a href="/concrete-driveway-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
-        <h3>Driveway Repair</h3>
-        <p>Crack filling and resurfacing to extend life.</p>
+        <i class="fas fa-wrench"></i>
+        <h3>Concrete Driveway Repair</h3>
+        <p>Crack filling, patching, and resurfacing to extend life.</p>
         <a href="/concrete-driveway-repair-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
-        <h3>Commercial Concrete</h3>
-        <p>Parking lots, slabs, walkways, and more.</p>
+        <i class="fas fa-building-columns"></i>
+        <h3>Commercial Concrete Services</h3>
+        <p>Parking lots, slabs, walkways, and structural pours for businesses.</p>
         <a href="/commercial-concrete-contractors-richmond-va/">Learn More →</a>
       </div>
       <div class="service">
+        <i class="fas fa-pepper-hot"></i>
         <h3>Aggregate Driveways</h3>
-        <p>Exposed aggregate for traction and style.</p>
+        <p>Exposed aggregate finishes for traction, durability, and style.</p>
         <a href="/aggregate-driveway-richmond-va/">Learn More →</a>
       </div>
     </div>
   </section>
 
   <!-- Gallery -->
-  <section id="gallery" class="gallery container">
+  <section id="gallery" class="gallery container section">
     <h2>Our Work in Richmond</h2>
     <div class="images">
-      <!-- Replace src with real project photos -->
-      <img src="https://via.placeholder.com/300x200" alt="Project 1">
-      <img src="https://via.placeholder.com/300x200" alt="Project 2">
-      <img src="https://via.placeholder.com/300x200" alt="Project 3">
-      <img src="https://via.placeholder.com/300x200" alt="Project 4">
-      <img src="https://via.placeholder.com/300x200" alt="Project 5">
-      <img src="https://via.placeholder.com/300x200" alt="Project 6">
+      <img src="https://www.concretesrichmondva.com/wp-content/uploads/2024/12/1-05-1.jpg" alt="Project 1">
+      <img src="https://www.concretesrichmondva.com/wp-content/uploads/2024/12/2-05.jpg" alt="Project 2">
+      <img src="https://www.concretesrichmondva.com/wp-content/uploads/2024/12/3-05.jpg" alt="Project 3">
+      <img src="https://www.concretesrichmondva.com/wp-content/uploads/2024/12/4-05.jpg" alt="Project 4">
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials container">
+  <section class="testimonials container section">
     <h2>What Our Clients Say</h2>
     <div class="cards">
       <div class="testimonial">
@@ -255,16 +295,14 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="cta">
-    <div class="container">
-      <p>Ready to start your concrete project? Contact our Richmond experts today for a free estimate!</p>
-      <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
-    </div>
+  <!-- CTA -->
+  <section class="cta container section">
+    <p>Ready to start your concrete project? Contact our Richmond experts today for a free estimate!</p>
+    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact container">
+  <section id="contact" class="contact container section">
     <h2>Contact Us</h2>
     <div class="form-container">
       <div class="contact-info">
@@ -317,15 +355,13 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>Contact Info</h4>
         <p>1234 Concrete Way, Richmond, VA</p>
         <p>(804) 555-1234</p>
         <p>info@concretesrichmondva.com</p>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1rem; font-size:0.9rem; color:#777;">
-      &copy; 2025 Concretes Richmond VA. All Rights Reserved.
-    </p>
+    <p>&copy; 2025 Concretes Richmond VA. All Rights Reserved.</p>
   </footer>
 
 </body>
